@@ -20,7 +20,7 @@ class CreateTransactionsTable extends Migration
             $table->string('sender');
             $table->integer('tokensBefore');
             $table->integer('tokensAfter');
-            $table->timestamp('timestamp');
+            $table->timestamp('timestamp')->useCurrent();
 
             $table->foreign('userid')->references('id')->on('users');
         });
