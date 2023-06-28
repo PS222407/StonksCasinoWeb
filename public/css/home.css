@@ -1,0 +1,107 @@
+.imgshop{
+   width: 200px;
+}
+.imgheader{
+   height: 40px;
+}
+.imgtoken{
+   height: 30px;
+}
+.groen{
+   color: #276F2E;
+}
+.card-home{
+   height: 54vh;
+   background-color: #DDE2CD;
+   margin: 5px;
+}
+.card-home img{
+   width: 60%;
+   max-width: 230px;
+   margin-top: 20px;
+
+}
+.btn-download{
+   margin-top: 40px;
+}
+.card-layout{
+   margin-top: 33px !important;
+   
+}
+.card-margin{
+   margin-bottom: 33px;
+   
+}
+.titel-card{
+   font-size: 18px;
+}
+.card-registreer{
+  
+   background-color: #DDE2CD;
+   
+}
+.width-login{
+   width: 60%;
+}
+@media (max-width: 767.98px) { 
+   .width-login{
+      width: 90%;
+   }
+ }
+ .Titelbar-accounts{
+    background-color: #276F2E;
+   color: white;
+ }
+ .paymend-method{
+    border-bottom: 3px solid #276F2E;
+ }
+ .img-payment img{
+    height: 50px;
+ }
+ .account-info p{
+    font-size: 1.5em;
+    
+ }
+ .account-info label{
+   font-size: 1.5em;
+   
+}
+ .account-logo{
+    width: 170px;
+ }
+ .card-groen{
+   background-color: #276F2E;
+   color: white;
+ }
+ .text-download{
+    font-size: 1.25em ;
+ }
+ .header-btn{
+    border: 2px solid black;
+ }
+ .bgimg-btn{
+    background-color: black;
+ }
+ .bgimg-btn img{
+    width: 100%;
+ }
+ .btn-library{
+    height: 100%;
+    width: 100%;
+ }
+ .btn-library:hover{
+    opacity: 0.7;
+ }
+ .btn-library:focus{
+   box-shadow: none;
+}
+.modal-content{
+   background-color: unset !important;
+}
+.img-card-shop{
+   height: 150px;
+}
+.transactions{
+   max-height: 60vh;
+   overflow-y: auto;
+}
