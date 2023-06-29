@@ -19,14 +19,31 @@
                 </div>
                 <div class="row">
                     <div class="col-12 text-center">
-                        <a class="btn btn-success btn-lg btn-download" href="{{ asset('applicatie/StonksCasino.application') }}" download>Download</a>
-                      
+                        <a class="btn btn-success btn-lg btn-download" href="{{ asset('applicatie/Application Files/StonksCasinoDesktop.zip') }}" download>Download desktop</a>
                     </div>
                 </div>
+
             </div>
         </div>
         <div class="col-12 col-md-6 col-lg-4 d-table card-margin">
             <div class="card-home card card-body d-table-cell align-middle">
+
+                <div class="row">
+                    <div class="col-12">
+                        <label class="titel-card">Download de StonksCasino mobiele app nu!</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 text-center">
+                        <img class="img-fluid" src="{{ asset('img/stonks.png') }}" alt="">
+                    </div>
+
+                </div>
+                <div class="row">
+                    <div class="col-12 text-center">
+                        <a class="btn btn-success btn-lg btn-download" href="{{ asset('applicatie/Application Files/com.companyname.librarywindow-Signed.apk') }}" download>Download mobile</a>
+                    </div>
+                </div>
 
             </div>
         </div>
