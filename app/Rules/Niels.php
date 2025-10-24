@@ -14,7 +14,7 @@ class Niels implements Rule
 
     public function passes($attribute, $value)
     {
-       return Auth::user()->username != "BreakdancerNiels";
+        return Auth::user()->username != 'BreakdancerNiels';
     }
 
     public function message()

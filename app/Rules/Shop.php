@@ -12,7 +12,7 @@ class Shop implements Rule
 
     public function passes($attribute, $value)
     {
-       return $value == "a";
+        return $value == 'a';
     }
 
     public function message()

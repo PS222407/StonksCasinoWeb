@@ -13,19 +13,16 @@ class AccountController extends Controller
     {
         $users = User::all();
 
-        if(Auth::user()->role == 'adminestrator')
-        {
-            return view('managementModule',['users' => $users]);
+        if (Auth::user()->role == 'adminestrator') {
+            return view('managementModule', ['users' => $users]);
         }
-        else
-        {
-            return view('index');
-        }
+
+        return view('index');
     }
 
     public function edit($id)
     {
-        $user = User::where('id' , $id)->first();
+        $user = User::where('id', $id)->first();
         $transactions = transaction::where('userid', $id)->get()->sortByDesc('timestamp');
 
         return view('userProfile', ['user' => $user, 'transactions' => $transactions]);
@@ -33,15 +30,14 @@ class AccountController extends Controller
 
     public function update(Request $request, $id)
     {
-        $user = User::where('id' , $id)->first();
+        $user = User::where('id', $id)->first();
 
         if ($user->banned == false) {
             $update = [
                 'banned' => true,
             ];
             User::where('id', $id)->update($update);
-        }
-        else{
+        } else {
             $update = [
                 'banned' => false,
             ];

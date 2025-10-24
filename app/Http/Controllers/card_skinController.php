@@ -18,8 +18,7 @@ class card_skinController extends Controller
         if (Auth::check()) {
             return view('store', ['card_skins' => $card_skins, 'purchased_skins' => $purchased_skins]);
         }
-        else {
-            return view('store', ['card_skins' => $card_skins]);
-        }
+
+        return view('store', ['card_skins' => $card_skins]);
     }
 }

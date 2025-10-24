@@ -13,7 +13,7 @@ class CheckBanned implements Rule
 
     public function passes($attribute, $value)
     {
-       return Auth::user()->banned != true;
+        return Auth::user()->banned != true;
     }
 
     public function message()

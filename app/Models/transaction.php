@@ -15,7 +15,6 @@ class transaction extends Model
         'sender',
         'tokensBefore',
         'tokensAfter',
-
     ];
     public $timestamps = false;
 }

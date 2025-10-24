@@ -20,7 +20,7 @@ class UserController extends Controller
         $tokens = $request->tokens;
 
         $request->validate([
-            'tokens' => ['required', 'integer', 'between:1,1000000', new CheckBanned],
+            'tokens' => ['required', 'integer', 'between:1,1000000', new CheckBanned()],
         ]);
 
         $update = [
@@ -43,7 +43,7 @@ class UserController extends Controller
     public function changeusername(Request $request)
     {
         $request->validate([
-            'username' => ['required', 'string', 'max:255', new Niels],
+            'username' => ['required', 'string', 'max:255', new Niels()],
         ]);
 
         User::find(Auth::user()->id)->update([
@@ -78,7 +78,7 @@ class UserController extends Controller
             'newpassword.min:8' => 'Het wachtwoord dient minimaal 8 karakters te bevatten.',
         ];
         $request->validate([
-            'Wachtwoord' => ['required', new CheckPassword],
+            'Wachtwoord' => ['required', new CheckPassword()],
             'newpassword' => ['required', 'string', 'min:8', 'same:password_confirmation'],
         ], $messages);
 
@@ -107,7 +107,7 @@ class UserController extends Controller
         $price = card_skin::where('id', $request->buycard1)->first();
 
         if (Auth::user()->token < $price->price) {
-            return back()->withErrors(["U heeft niet genoeg geld om de cardskin te kopen"])->withInput();
+            return back()->withErrors(['U heeft niet genoeg geld om de cardskin te kopen'])->withInput();
         }
 
         $tokens = $price->price;

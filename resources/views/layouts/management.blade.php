@@ -31,32 +31,32 @@
             <div class="row">
                 <div class="col-12 col-sm-3">
                     <h1>StonksCasino</h1>
-                </div>  
-        
-              
-            
-            
+                </div>
+
+
+
+
                 <div class="col-12 col-sm-6 ml-auto my-auto ">
                     <div class="div-header ">
-                        
-                    
+
+
                         @guest
                         @if (Route::has('login'))
-                       
+
                                 <a class="btn btn-groen btn-login float-sm-right float-center" href="{{ route('login') }}">{{ __('Login') }}</a>
-                           
+
                         @endif
 
                         @if (Route::has('register'))
-                           
+
                                 <a class="btn btn-dark btn-login float-sm-right float-center" href="{{ route('register') }}">{{ __('Register') }}</a>
-                          
+
                         @endif
                     @else
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item dropdown">
                             <a id="navbarDropdown" class="nav-link nav-account dropdown-toggle float-right" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                {{ Auth::user()->username }} <img src="{{asset('img/streep.png')}}" class="imgheader" alt="">  <img src="{{asset('img/Token.png')}}" class="imgheader" alt="">  {{ Auth::user()->token }} 
+                                {{ Auth::user()->username }} <img src="{{asset('img/streep.png')}}" class="imgheader" alt="">  <img src="{{asset('img/Token.png')}}" class="imgheader" alt="">  {{ Auth::user()->token }}
 
                             </a>
 
@@ -66,7 +66,7 @@
                              </a>
                                 <a class="dropdown-item" href="{{ route('logout') }}"
                                    onclick="event.preventDefault();
-                                                 document.getElementById('logout-form').submit();"> 
+                                                 document.getElementById('logout-form').submit();">
                                     {{ __('Uitloggen') }}
                                 </a>
 
@@ -77,7 +77,7 @@
                         </li>
                     </ul>
                     @endguest
-             
+
                     </div>
                 </div>
             </div>
@@ -121,12 +121,12 @@
                         <ul class="footer">
                             <li class="footer">KVK: 44521839</li>
                             <li class="footer">BTW: NL001426759B82</li>
-                        </ul>    
-                    </div>             
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
-    
+
     </footer>
 </body>
 </html>

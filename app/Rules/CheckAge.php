@@ -2,8 +2,6 @@
 
 namespace App\Rules;
 
-use DateTime;
-use Hamcrest\Core\HasToString;
 use Illuminate\Contracts\Validation\Rule;
 
 class CheckAge implements Rule
@@ -14,7 +12,7 @@ class CheckAge implements Rule
 
     public function passes($attribute, $value)
     {
-        return $value <= today()->modify("-18 years")->format("Y-m-d");
+        return $value <= today()->modify('-18 years')->format('Y-m-d');
     }
 
     public function message()

@@ -4,7 +4,7 @@ namespace App\Rules;
 
 use Illuminate\Contracts\Validation\Rule;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Hashing\BcryptHasher;
+
 class CheckPassword implements Rule
 {
     public function __construct()
