@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\card_skin;
-use App\Models\purchased_skin;
+use App\Models\CardSkin;
+use App\Models\PurchasedSkin;
 use Illuminate\Http\Request;
 use App\Models\User;
-use App\Models\transaction;
+use App\Models\Transaction;
 use App\Rules\CheckBanned;
 use App\Rules\CheckPassword;
 use App\Rules\Niels;
@@ -27,7 +27,7 @@ class UserController extends Controller
             'token' => $tokens + Auth::user()->token,
         ];
 
-        transaction::create([
+        Transaction::create([
             'userid' => Auth::user()->id,
             'tokens' => $tokens,
             'sender' => 'deposit or debit, Website',
@@ -104,7 +104,7 @@ class UserController extends Controller
 
     public function buycard(Request $request)
     {
-        $price = card_skin::where('id', $request->buycard1)->first();
+        $price = CardSkin::where('id', $request->buycard1)->first();
 
         if (Auth::user()->token < $price->price) {
             return back()->withErrors(['U heeft niet genoeg geld om de cardskin te kopen'])->withInput();
@@ -115,7 +115,7 @@ class UserController extends Controller
             'token' => Auth::user()->token - $tokens,
         ];
 
-        transaction::create([
+        Transaction::create([
             'userid' => Auth::user()->id,
             'tokens' => -$tokens,
             'sender' => 'buy cardskin, Website',
@@ -125,7 +125,7 @@ class UserController extends Controller
 
         User::find(Auth::user()->id)->update($update);
 
-        purchased_skin::create([
+        PurchasedSkin::create([
             'skinId' => $request->buycard1,
             'userId' => Auth::user()->id,
         ]);

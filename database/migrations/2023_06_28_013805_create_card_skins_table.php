@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\CardSkin;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -23,7 +24,7 @@ class CreateCardSkinsTable extends Migration
             $table->timestamps();
         });
 
-        \App\Models\card_skin::insert([
+        CardSkin::insert([
             [
                 'name' => 'Default',
                 'web_img_path' => 'img/card/default.png',

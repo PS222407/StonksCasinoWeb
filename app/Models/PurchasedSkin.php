@@ -5,16 +5,14 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class transaction extends Model
+class PurchasedSkin extends Model
 {
     use HasFactory;
 
     protected $fillable = [
-        'userid',
-        'tokens',
-        'sender',
-        'tokensBefore',
-        'tokensAfter',
+        'skinId',
+        'userId',
     ];
+
     public $timestamps = false;
 }

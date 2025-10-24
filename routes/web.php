@@ -1,7 +1,7 @@
 <?php
 
 use App\Http\Controllers\AccountController;
-use App\Http\Controllers\card_skinController;
+use App\Http\Controllers\CardSkinController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 
@@ -21,7 +21,7 @@ Route::view('/download', 'download')->name('download');
 Route::view('/Bibliotheek', 'library')->name('library');
 Route::view('/AlgemeneVoorwaarden', 'termsandcoditions')->name('termsandcoditions');
 
-Route::get('winkel', [card_skinController::class, 'index'])->name('winkel');
+Route::get('winkel', [CardSkinController::class, 'index'])->name('winkel');
 Route::view('/Gebruikesnaam', 'changeUsername')->middleware('auth')->name('ChangeUsername');
 Route::view('/Email', 'changeEmail')->middleware('auth')->name('ChangeEmail');
 Route::view('/wachtwoord', 'changePassword')->middleware('auth')->name('ChangePassword');

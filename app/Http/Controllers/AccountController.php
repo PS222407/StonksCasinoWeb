@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\transaction;
+use App\Models\Transaction;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -23,7 +23,7 @@ class AccountController extends Controller
     public function edit($id)
     {
         $user = User::where('id', $id)->first();
-        $transactions = transaction::where('userid', $id)->get()->sortByDesc('timestamp');
+        $transactions = Transaction::where('userid', $id)->get()->sortByDesc('timestamp');
 
         return view('userProfile', ['user' => $user, 'transactions' => $transactions]);
     }
