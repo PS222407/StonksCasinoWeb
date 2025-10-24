@@ -8,13 +8,14 @@ use Illuminate\Database\Eloquent\Model;
 class transaction extends Model
 {
     use HasFactory;
+
     protected $fillable = [
         'userid',
         'tokens',
         'sender',
         'tokensBefore',
         'tokensAfter',
-      
+
     ];
     public $timestamps = false;
 }

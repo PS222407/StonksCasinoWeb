@@ -8,11 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class purchased_skin extends Model
 {
     use HasFactory;
+
     protected $fillable = [
         'skinId',
         'userId',
-        
-      
     ];
+
     public $timestamps = false;
 }
