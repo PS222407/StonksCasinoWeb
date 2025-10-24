@@ -1,7 +1,7 @@
 services:
   mailpit:
     image: axllent/mailpit:latest
-    container_name: mailpit
+    container_name: stonkscasino-mailpit
     restart: on-failure
     volumes:
       - ./docker_mailpit_data:/data
@@ -15,7 +15,7 @@ services:
 
   mysql:
     image: mysql:8.0.36
-    container_name: mysql
+    container_name: stonkscasino-mysql
     ports:
       - "3306:3306"
     restart: on-failure
@@ -28,7 +28,7 @@ services:
 
   phpmyadmin:
     image: jensr22/phpmyadmin:latest
-    container_name: phpmyadmin
+    container_name: stonkscasino-phpmyadmin
     restart: on-failure
     ports:
       - "8080:80"
@@ -40,7 +40,7 @@ services:
 
   postgres:
     image: postgres:18
-    container_name: postgres
+    container_name: stonkscasino-postgres
     restart: on-failure
     ports:
       - "5432:5432"
@@ -53,7 +53,7 @@ services:
   # login (system: PostgreSQL, server: postgres, username: postgres, password: postgres, database: postgres)
   adminer:
     image: adminer
-    container_name: adminer
+    container_name: stonkscasino-adminer
     restart: on-failure
     ports:
       - "8082:8080"
